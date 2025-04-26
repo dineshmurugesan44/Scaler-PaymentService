@@ -21,7 +21,8 @@ public class PaymentController {
 
     @PostMapping
     public String intiatePayment(@RequestBody PaymentDto paymentDto) {
-        return paymentService.initiatePayment();
+        return paymentService.initiatePayment(paymentDto.getEmail(),paymentDto.getName(),paymentDto.getPhoneNumber(),
+        paymentDto.getOrderId(),paymentDto.getAmount());
 
     }
 
